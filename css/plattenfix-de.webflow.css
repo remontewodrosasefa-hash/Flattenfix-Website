@@ -1368,8 +1368,10 @@ blockquote {
 }
 
 .text-size-regular {
+  color: var(--dark-green);
   font-size: 1rem;
   line-height: 1.5;
+  text-decoration: none;
 }
 
 .text-size-regular.max-width-30ch {
@@ -1432,7 +1434,7 @@ blockquote {
 }
 
 .text-size-xlarge.text-weight-medium {
-  color: var(--white);
+  color: var(--green);
   font-size: 1rem;
 }
 
@@ -1641,6 +1643,10 @@ blockquote {
   line-height: 1.15;
 }
 
+.heading-3.text-weight-regular {
+  font-size: 3rem;
+}
+
 .style-guide-button-line {
   background-color: #3f3f3f;
   width: 100%;
@@ -1760,7 +1766,7 @@ blockquote {
   color: var(--dark-green);
 }
 
-.text-weight-medium.text-size-regular.text-color-mobile {
+.text-weight-medium.text-size-regular.text-color-mobile, .text-weight-medium.text-size-regular.color {
   color: var(--white);
 }
 
@@ -2882,7 +2888,7 @@ blockquote {
 
 .hero-2-content-wrapper {
   color: #fff;
-  background-image: url('../images/sdfasdfasdfas.png');
+  background-image: url('../images/sdfasdfasdfas.avif');
   background-position: 50%;
   background-size: cover;
   border: 1px solid #eceff3;
@@ -3684,6 +3690,7 @@ blockquote {
 }
 
 .pricing-grid.display-horizontal {
+  flex-flow: wrap;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   display: flex;
@@ -4215,7 +4222,7 @@ blockquote {
 
 .floating-card-component {
   background-color: #fff;
-  background-image: url('../images/Kaim-KT-9659.jpg');
+  background-image: url('../images/Kaim-KT-9659.avif');
   background-position: 50%;
   background-size: cover;
   border-radius: .5rem;
@@ -8400,6 +8407,10 @@ blockquote {
     font-size: 1.6rem;
   }
 
+  .heading-3.text-weight-regular {
+    font-size: 2.1rem;
+  }
+
   .style-guide-component {
     grid-row-gap: 4rem;
     grid-template-columns: 1fr;
@@ -9204,6 +9215,10 @@ blockquote {
 
   .heading-3 {
     font-size: 3rem;
+  }
+
+  .heading-3.text-weight-regular {
+    font-size: 2rem;
   }
 
   .style-guide-content {
@@ -10123,7 +10138,7 @@ blockquote {
   align-self: stretch;
 }
 
-#w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b631-3d0b54f4, #w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b63c-3d0b54f4, #w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b647-3d0b54f4, #w-node-_6dfcd3aa-fd1d-cba8-2a4e-15f51e5500c6-3d0b54f4, #w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b652-3d0b54f4 {
+#w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b631-3d0b54f4, #w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b63c-3d0b54f4, #w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b647-3d0b54f4, #w-node-_6dfcd3aa-fd1d-cba8-2a4e-15f51e5500c6-3d0b54f4, #w-node-a1aea790-eeff-1ac5-0772-247bc0c40557-3d0b54f4, #w-node-bf7ccd21-4f87-1b85-d2f9-75af2fb5b652-3d0b54f4 {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
