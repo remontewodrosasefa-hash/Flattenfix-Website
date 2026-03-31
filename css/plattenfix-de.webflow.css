@@ -1526,6 +1526,7 @@ blockquote {
 }
 
 .heading-5.text-weight-regular {
+  text-align: left;
   margin-bottom: 1.4rem;
   font-size: 3.5rem;
 }
@@ -1541,6 +1542,10 @@ blockquote {
 
 .heading-5.text-weight-regular.faqlik:hover {
   background-color: var(--green);
+}
+
+.heading-5.text-weight-regular.blogs {
+  margin-bottom: 0;
 }
 
 .text-size-medium {
@@ -1837,6 +1842,7 @@ blockquote {
 .nav-menu {
   color: var(--black);
   align-items: center;
+  height: 100%;
   font-size: 1.3rem;
   display: flex;
 }
@@ -1845,6 +1851,7 @@ blockquote {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 90px;
   display: flex;
 }
 
@@ -1993,6 +2000,11 @@ blockquote {
 
 .text-color-green {
   color: #196061;
+}
+
+.text-color-green.text-weight-medium {
+  text-align: left;
+  text-decoration: underline;
 }
 
 .text-color-green.text-weight-medium.wite {
@@ -2252,7 +2264,8 @@ blockquote {
 }
 
 .footer {
-  margin-bottom: 1rem;
+  position: static;
+  inset: auto 0% 0%;
 }
 
 .footer-component {
@@ -2526,6 +2539,10 @@ blockquote {
   font-size: 1rem;
 }
 
+.max-width-50ch.blogs {
+  max-width: none;
+}
+
 .button-green-icon {
   align-items: center;
   padding-top: .1rem;
@@ -2756,6 +2773,10 @@ blockquote {
   display: flex;
   position: relative;
   overflow: hidden;
+}
+
+.button-green.w--current {
+  display: none;
 }
 
 .button-green.circle-button {
@@ -4131,6 +4152,7 @@ blockquote {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  text-decoration: none;
   display: flex;
 }
 
@@ -6242,7 +6264,7 @@ blockquote {
 .image-3 {
   width: 80%;
   min-width: 160px;
-  max-width: 200px;
+  max-width: 160px;
 }
 
 .overflow-hidden {
@@ -7221,6 +7243,42 @@ blockquote {
 
 .text-block-5, .text-block-6, .bold-text-7 {
   max-width: 750px;
+}
+
+.form-2 {
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  display: flex;
+}
+
+.text-field-2 {
+  align-self: center;
+  width: 140px;
+}
+
+.form-block-2 {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.dropdown-2, .dropdown-3, .dropdown-4, .dropdown-5, .dropdown-6 {
+  height: 100%;
+}
+
+.code-embed {
+  z-index: 1000;
+  position: fixed;
+  inset: auto auto 2% 3%;
+}
+
+.code-embed-2 {
+  margin-top: 150px;
+}
+
+.paragraph-12 {
+  color: var(--dark-green);
+  text-align: left;
 }
 
 @media screen and (min-width: 1440px) {
@@ -8340,6 +8398,11 @@ blockquote {
 
   .paragraph-8 {
     margin-top: 28px;
+  }
+
+  .code-embed-2 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -10412,7 +10475,7 @@ blockquote {
   align-self: start;
 }
 
-#w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d8b-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d8d-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d8f-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d91-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d93-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d95-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d97-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d99-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d9f-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894da1-40ef02f2, #w-node-f662bdbb-93cb-730f-d1c8-b79d81edb9a1-40ef02f2, #w-node-_8699a851-df26-762f-33bf-d3cd25b6df17-40ef02f2, #w-node-_4238499e-8697-9237-8d03-bab429d3e278-c8b0cd9f, #w-node-_4238499e-8697-9237-8d03-bab429d3e288-c8b0cd9f, #w-node-_4238499e-8697-9237-8d03-bab429d3e28a-c8b0cd9f, #w-node-_4238499e-8697-9237-8d03-bab429d3e28f-c8b0cd9f {
+#w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d8b-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d8d-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d8f-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d91-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d93-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d95-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d97-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d99-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894d9f-40ef02f2, #w-node-_163b9ba4-4e1a-6714-eac0-c330d1894da1-40ef02f2, #w-node-f662bdbb-93cb-730f-d1c8-b79d81edb9a1-40ef02f2, #w-node-_8699a851-df26-762f-33bf-d3cd25b6df17-40ef02f2, #w-node-_4238499e-8697-9237-8d03-bab429d3e278-c8b0cd9f, #w-node-_4238499e-8697-9237-8d03-bab429d3e288-c8b0cd9f, #w-node-_4238499e-8697-9237-8d03-bab429d3e28a-c8b0cd9f, #w-node-_4238499e-8697-9237-8d03-bab429d3e28f-c8b0cd9f, #w-node-afc4d9ae-bebb-e11d-3753-2a5031a6c797-b5ea92d1, #w-node-afc4d9ae-bebb-e11d-3753-2a5031a6c79a-b5ea92d1, #w-node-afc4d9ae-bebb-e11d-3753-2a5031a6c79c-b5ea92d1, #w-node-afc4d9ae-bebb-e11d-3753-2a5031a6c7a1-b5ea92d1, #w-node-c629e549-c121-332c-0362-1eeeac677e75-b5ea92d1, #w-node-c629e549-c121-332c-0362-1eeeac677e7b-b5ea92d1 {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
@@ -10486,6 +10549,10 @@ blockquote {
     order: 1;
     grid-area: span 1 / span 2 / span 1 / span 2;
   }
+
+  #w-node-c629e549-c121-332c-0362-1eeeac677e75-b5ea92d1 {
+    grid-area: span 1 / span 3 / span 1 / span 3;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -10499,6 +10566,10 @@ blockquote {
 
   #w-node-_59929d29-a476-bd2b-878c-7c0a79449207-3d0b5536, #w-node-_59929d29-a476-bd2b-878c-7c0a79449209-3d0b5536, #w-node-_59929d29-a476-bd2b-878c-7c0a7944920b-3d0b5536, #w-node-_59929d29-a476-bd2b-878c-7c0a7944920d-3d0b5536, #w-node-_59929d29-a476-bd2b-878c-7c0a7944920f-3d0b5536, #w-node-_59929d29-a476-bd2b-878c-7c0a79449211-3d0b5536 {
     grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+
+  #w-node-c629e549-c121-332c-0362-1eeeac677e75-b5ea92d1 {
+    grid-column: span 1 / span 1;
   }
 }
 
