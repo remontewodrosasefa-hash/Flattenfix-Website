@@ -4,8 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://www.plattenfix.de/</loc>
@@ -14,11 +12,6 @@
 </url>
 <url>
   <loc>https://www.plattenfix.de/features/produkte-terrasse-balkon-flachdach-oder-im-garten.html</loc>
-  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.plattenfix.de/features/faqs-1.html</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -88,105 +81,103 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.plattenfix.de/documents/AGB-Endverbraucher-2018.pdf</loc>
-  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.plattenfix.de/documents/Bemessungsgrundlagen-1.pdf</loc>
-  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.plattenfix.de/documents/daten_standard_de.pdf</loc>
-  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.plattenfix.de/documents/daten_fugenkreuz_de.pdf</loc>
-  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://www.plattenfix.de/ratgeber/stelzlager-plattenlager-fur-terrassen-der-din-konforme-profi-guide.html</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/ratgeber/wasserablauf-der-terrasse-verbessern.html</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/ratgeber/wpc--und-holzterrassen-die-perfekte-unterkonstruktion-mit-balkenlagern.html</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/ratgeber/okologische-flachenbefestigung-auffahrten-pflastern-mit-rasenfugenkreuzen.html</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/ratgeber/terrassenaufbau-auf-dem-flachdach-abdichtungen-und-bitumen-sicher-schutzen.html</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.plattenfix.de/documents/AGB-Endverbraucher-2018.pdf</loc>
+  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://www.plattenfix.de/documents/Bemessungsgrundlagen-1.pdf</loc>
+  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://www.plattenfix.de/documents/daten_standard_de.pdf</loc>
+  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://www.plattenfix.de/documents/daten_fugenkreuz_de.pdf</loc>
+  <lastmod>2026-04-02T09:54:49+00:00</lastmod>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/Maxi-Data.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/Daten-Multi.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/daten_multiplus_de.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/daten_vario2_de.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/daten_variomini_de.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/daten_rasenfugen_de.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/Gesamkatalog-1.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/Gesamtkatalog-EN.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/Gesamtkatalog-FR.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/Gesamtkatalog-NL.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://www.plattenfix.de/documents/Gesamtkatalog-CZ.pdf</loc>
   <lastmod>2026-04-02T09:54:49+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
-
-
 </urlset>
