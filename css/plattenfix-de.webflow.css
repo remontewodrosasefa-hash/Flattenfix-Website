@@ -1390,8 +1390,8 @@ blockquote {
 
 .padding-global {
   padding-bottom: 16px;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: .7rem;
+  padding-right: .7rem;
 }
 
 .padding-global.large {
@@ -1866,7 +1866,7 @@ blockquote {
   color: #042f3a;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem .7rem;
   display: flex;
 }
 
@@ -6563,6 +6563,7 @@ blockquote {
 
 .link {
   color: #042f3a;
+  font-size: 1.3rem;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -7279,6 +7280,10 @@ blockquote {
 .paragraph-12 {
   color: var(--dark-green);
   text-align: left;
+}
+
+.code-embed-3 {
+  width: 100px;
 }
 
 @media screen and (min-width: 1440px) {
@@ -9228,6 +9233,10 @@ blockquote {
 
   .text-block-4, .heading-12 {
     color: var(--dark-green);
+  }
+
+  .code-embed-3 {
+    width: 100px;
   }
 }
 
