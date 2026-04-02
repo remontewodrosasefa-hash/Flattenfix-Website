@@ -4250,7 +4250,7 @@ blockquote {
 
 .floating-card-component {
   background-color: #fff;
-  background-image: url('../images/Kaim-KT-9659.avif');
+  background-image: url('../images/PLATTENFIX-Stelzlager-3KP40.avif');
   background-position: 50%;
   background-size: cover;
   border-radius: .5rem;
@@ -9247,7 +9247,7 @@ blockquote {
   }
 
   .container.small {
-    padding-left: 0;
+    padding-left: 10px;
     padding-right: 0;
   }
 
@@ -9261,8 +9261,8 @@ blockquote {
   }
 
   .padding-global {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
   }
 
   .padding-global.small {
@@ -10106,7 +10106,9 @@ blockquote {
   }
 
   .image-3 {
-    width: 60%;
+    width: 130px;
+    min-width: auto;
+    max-width: none;
   }
 
   .wood-component-icon {
@@ -10219,6 +10221,10 @@ blockquote {
 
   .image-13 {
     max-width: none;
+  }
+
+  .code-embed-3 {
+    width: 100px;
   }
 }
 

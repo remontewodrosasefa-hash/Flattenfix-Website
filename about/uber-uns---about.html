@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Apr 02 2026 09:44:18 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Apr 02 2026 12:20:14 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6911b6e00e516d233d0b550f" data-wf-site="6911b6de0e516d233d0b5428" lang="en">
 <head>
   <meta charset="utf-8">
@@ -115,136 +115,6 @@
   <meta name="google-site-verification" content="fQ4Z3q6aW9C6Qe-MH4syKjkTt0VoZJ1q5MBb-HYq4jQ">
 </head>
 <body>
-  <div class="code-embed w-embed w-script"><!--  1. The Wrapper (keeps the popup relative to the input)  -->
-    <div id="search-widget" style="position: relative; font-family: sans-serif;">
-      <!--  2. The Pop-Up Results Box  -->
-      <div id="search-results" style="display: none; position: absolute; bottom: 100%; left: 0; margin-bottom: 15px; width: 350px; max-height: 400px; overflow-y: auto; background: white; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #eaeaea; z-index: 9999;">
-        <!--  Results will be injected here  -->
-      </div>
-      <!--  3. Your Blue Search Bar & CSS  -->
-      <style>
-    #product-search {
-      width: 250px;
-      padding: 15px;
-      background-color: #0e96d4;
-      color: #ffffff;
-      border: 2px solid white;
-      border-radius: 8px;
-      font-size: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      outline: none;
-      transition: width 0.3s ease;
-    }
-    #product-search::placeholder { color: rgba(255, 255, 255, 0.8); }
-    #product-search:focus { width: 350px; } /* Expands to match the popup width */
-    /* Premium style for the individual result links */
-    .search-result-item {
-      display: block;
-      padding: 15px;
-      color: #333;
-      text-decoration: none;
-      border-bottom: 1px solid #f0f0f0;
-      transition: background 0.2s;
-    }
-    .search-result-item:hover { background-color: #f4fbfd; color: #0e96d4; }
-    .search-result-item:last-child { border-bottom: none; }
-    .result-title { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
-    .result-desc { font-size: 12px; color: #666; line-height: 1.4; }
-  </style>
-      <input type="text" id="product-search" placeholder="Produkte, Eigenschaften..." autocomplete="off">
-    </div>
-    <!--  4. The Advanced Brains (JavaScript)  -->
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // --- UPGRADED MINI DATABASE ---
-  // Now includes descriptions and hidden keywords directly from your website!
-  const products =[
-    { 
-      name: "01. STANDARD Plattenlager", 
-      url: "/features/produkte-terrasse-balkon-flachdach-oder-im-garten#standard",
-      description: "Schon unser preisgünstiges Basismodell überzeugt mit durchdachter Funktionalität und lässt sich besonders leicht verlegen.",
-      keywords: "basis leicht verlegen günstig basismodell terrasse" 
-    },
-    { 
-      name: "02. MAXI-Plattenlager", 
-      url: "/features/produkte-terrasse-balkon-flachdach-oder-im-garten#maxi",
-      description: "Für Untergründe, die Höhenunterschiede aufweisen. Der große Auftritt von MAXI, unserem stapelbaren Plattenlager!",
-      keywords: "stapelbar höhenunterschied untergrund groß stapeln" 
-    },
-    { 
-      name: "03. MULTI / MULTI+PLUS Plattenlager", 
-      url: "/features/produkte-terrasse-balkon-flachdach-oder-im-garten#multi",
-      description: "Unsere Allrounder sind vielfältig einsetzbar und meistern Höhenunterschiede von bis zu 24,5 cm auf den Millimeter genau.",
-      keywords: "allrounder millimeter genau 24,5cm vielfältig plus" 
-    },
-    { 
-      name: "04. VARIO / VARIO MINI Stelzlager", 
-      url: "/features/produkte-terrasse-balkon-flachdach-oder-im-garten#vario",
-      description: "Mit vier Zahnrädern gegen das Gefälle: Stemmen große Terrassenplatten und gleichen Gefälle stufenlos aus.",
-      keywords: "zahnräder gefälle stufenlos stelzlager mini große platten ausgleichen" 
-    },
-    { 
-      name: "05. Fugenkreuze", 
-      url: "/features/produkte-terrasse-balkon-flachdach-oder-im-garten#fugenkreuze",
-      description: "Halten Ihre Steine und Terrassenplatten auf gebührenden Abstand – schön gleichmäßig. Gut für den Wasserkreislauf!",
-      keywords: "steine abstand gleichmäßig wasserkreislauf einfach genial" 
-    },
-    { 
-      name: "06. Rasenfugenkreuze", 
-      url: "/features/produkte-terrasse-balkon-flachdach-oder-im-garten#rasenfugenkreuze",
-      description: "Ihr Garten oder Hof soll ordentlich aussehen, aber der Natur freien Lauf lassen? Besonders umweltfreundlich!",
-      keywords: "garten hof natur umweltfreundlich rasen gras ökologisch" 
-    }
-  ];
-  const searchInput = document.getElementById("product-search");
-  const resultsBox = document.getElementById("search-results");
-  searchInput.addEventListener("input", function() {
-    const query = this.value.toLowerCase().trim();
-    resultsBox.innerHTML = ""; 
-    if (query.length === 0) {
-      resultsBox.style.display = "none";
-      return;
-    }
-    // This makes the search "smart". 
-    // If a user types "vario gefälle", it checks for BOTH words.
-    const queryWords = query.split(" ");
-    const matchedProducts = products.filter(function(product) {
-      // Combine the name, description, and hidden keywords into one invisible block of text to search through
-      const searchableText = (product.name + " " + product.description + " " + product.keywords).toLowerCase();
-      // Check if every word typed by the user is inside that block of text
-      return queryWords.every(word => searchableText.includes(word));
-    });
-    if (matchedProducts.length > 0) {
-      matchedProducts.forEach(function(product) {
-        const link = document.createElement("a");
-        link.href = product.url;
-        link.className = "search-result-item";
-        // This injects both the TITLE and the DESCRIPTION into the dropdown list
-        link.innerHTML = `
-          <div class="result-title">${product.name}</div>
-          <div class="result-desc">${product.description}</div>
-        `;
-        resultsBox.appendChild(link);
-      });
-      resultsBox.style.display = "block"; 
-    } else {
-      resultsBox.innerHTML = "<div style='padding: 15px; color: #888; font-size: 14px;'>Keine Ergebnisse. Versuchen Sie einen anderen Begriff.</div>";
-      resultsBox.style.display = "block";
-    }
-  });
-  document.addEventListener("click", function(event) {
-    if (!searchInput.contains(event.target) && !resultsBox.contains(event.target)) {
-      resultsBox.style.display = "none";
-    }
-  });
-  searchInput.addEventListener("focus", function() {
-    if (this.value.trim().length > 0) {
-      this.dispatchEvent(new Event('input')); 
-    }
-  });
-});
-</script>
-  </div>
   <section>
     <div class="padding-global">
       <div class="w-layout-blockcontainer container w-container">
@@ -258,13 +128,13 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
     </div>
     <div data-w-id="4238499e-8697-9237-8d03-bab429d3e275" class="home-images-wrapper">
-      <div data-w-id="4238499e-8697-9237-8d03-bab429d3e276" style="opacity:0" class="home-image-1"><img src="../images/Bildergalerien-Verlegung.avif" loading="lazy" sizes="(max-width: 1140px) 100vw, 1140px" srcset="../images/Bildergalerien-Verlegung-p-500.avif 500w, ../images/Bildergalerien-Verlegung-p-800.avif 800w, ../images/Bildergalerien-Verlegung.avif 1140w" alt="" class="image-24"></div>
+      <div data-w-id="4238499e-8697-9237-8d03-bab429d3e276" style="opacity:0" class="home-image-1"><img src="../images/Bildergalerien-Verlegung.avif" loading="lazy" alt="" class="image-24"></div>
       <div id="w-node-_4238499e-8697-9237-8d03-bab429d3e278-3d0b550f" data-w-id="4238499e-8697-9237-8d03-bab429d3e278" style="opacity:0" class="home-image-2">
         <div class="image-wrapper"><img src="../images/Kaim-KT-9646.avif" loading="lazy" sizes="(max-width: 1476px) 100vw, 1476px" srcset="../images/Kaim-KT-9646-p-500.avif 500w, ../images/Kaim-KT-9646-p-800.avif 800w, ../images/Kaim-KT-9646.avif 1476w" alt="" class="image-23"></div>
       </div>
       <div id="w-node-_4238499e-8697-9237-8d03-bab429d3e288-3d0b550f" data-w-id="4238499e-8697-9237-8d03-bab429d3e288" style="opacity:0" class="home-image-3"><img src="../images/Kaim-KT-9655.jpg" loading="lazy" sizes="(max-width: 1476px) 100vw, 1476px" srcset="../images/Kaim-KT-9655-p-500.jpg 500w, ../images/Kaim-KT-9655-p-800.jpg 800w, ../images/Kaim-KT-9655-p-1080.jpg 1080w, ../images/Kaim-KT-9655.jpg 1476w" alt="" class="image-19"></div>
       <div id="w-node-_4238499e-8697-9237-8d03-bab429d3e28a-3d0b550f" class="home-image-4">
-        <div data-w-id="4238499e-8697-9237-8d03-bab429d3e28b" style="opacity:0" class="home-image-wrapper-top"><img src="../images/Kaim-KT-9659.avif" loading="lazy" sizes="(max-width: 1476px) 100vw, 1476px" srcset="../images/Kaim-KT-9659-p-500.avif 500w, ../images/Kaim-KT-9659-p-800.avif 800w, ../images/Kaim-KT-9659.avif 1476w" alt="" class="image-20"></div>
+        <div data-w-id="4238499e-8697-9237-8d03-bab429d3e28b" style="opacity:0" class="home-image-wrapper-top"><img src="../images/PLATTENFIX-Stelzlager-3KP40.avif" loading="lazy" sizes="(max-width: 1476px) 100vw, 1476px" srcset="../images/Kaim-KT-9659-p-500.avif 500w, ../images/Kaim-KT-9659-p-800.avif 800w, ../images/PLATTENFIX-Stelzlager-3KP40.avif 1476w" alt="PLATTENFIX Stelzlager 3KP40 für 2 cm Feinsteinzeug Terrassenplatten" class="image-20"></div>
         <div data-w-id="4238499e-8697-9237-8d03-bab429d3e28d" style="opacity:0" class="home-image-wrapper-bottom"><img src="../images/Kaim-KT-9703.avif" loading="lazy" sizes="(max-width: 1416px) 100vw, 1416px" srcset="../images/Kaim-KT-9703-p-500.avif 500w, ../images/Kaim-KT-9703-p-800.avif 800w, ../images/Kaim-KT-9703.avif 1416w" alt="" class="image-22"></div>
       </div>
       <div id="w-node-_4238499e-8697-9237-8d03-bab429d3e28f-3d0b550f" data-w-id="4238499e-8697-9237-8d03-bab429d3e28f" style="opacity:0" class="home-image-5"><img src="../images/Kaim-KT-9745-Plattenfix.avif" loading="lazy" sizes="(max-width: 1476px) 100vw, 1476px" srcset="../images/Kaim-KT-9745-Plattenfix-p-500.avif 500w, ../images/Kaim-KT-9745-Plattenfix-p-800.avif 800w, ../images/Kaim-KT-9745-Plattenfix-p-1080.avif 1080w, ../images/Kaim-KT-9745-Plattenfix.avif 1476w" alt="" class="image-21"></div>
@@ -275,13 +145,53 @@ document.addEventListener("DOMContentLoaded", function() {
       <div class="container w-container">
         <div class="navbar-component">
           <a href="../index.html" class="brand w-nav-brand"><img src="../images/Group-42.svg" loading="lazy" alt="" class="image-3"></a>
+          <div class="code-embed-3 w-embed">
+            <div class="nav-search-wrapper" style="position: relative; width: 250px; font-family: Arial, sans-serif;">
+              <!--  The Search Input  -->
+              <input type="text" id="global-nav-search" placeholder="Suchen..." autocomplete="off" style="width: 60%; padding: 10px 15px; border: 1px solid #ccc; border-radius: 20px; font-size: 14px; outline: none; transition: border-color 0.3s;">
+              <!--  The Dropdown Results Box (Hidden by default)  -->
+              <div id="global-search-results" style="display: none; position: absolute; top: 100%; left: 0; right: 0; margin-top: 5px; background: white; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-height: 350px; overflow-y: auto; z-index: 9999;">
+              </div>
+              <style>
+    #global-nav-search:focus {
+      border-color: #0e96d4; /* Plattenfix Blue */
+    }
+    .global-result-item {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 1px solid #f5f5f5;
+      transition: background 0.2s;
+    }
+    .global-result-item:hover {
+      background-color: #f4fbfd;
+    }
+    .global-result-item:last-child {
+      border-bottom: none;
+    }
+    .global-result-title {
+      font-weight: bold;
+      font-size: 14px;
+      color: #0e96d4;
+    }
+    .global-result-category {
+      font-size: 11px;
+      color: #888;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+  </style>
+            </div>
+          </div>
           <nav role="navigation" class="nav-menu w-nav-menu">
             <div data-hover="true" data-delay="200" data-w-id="7cee254c-d066-67e0-b415-2d2af2baa8b7" class="dropdown-2 w-dropdown">
               <div class="dropdown w-dropdown-toggle">
                 <a href="../features/produkte-terrasse-balkon-flachdach-oder-im-garten.html" class="link">Produkte</a><img src="../images/Arrow-Icon.svg" loading="lazy" alt="Arrow" class="dropdown-icon">
               </div>
               <nav class="dropdown-list w-dropdown-list">
-                <a href="../features/faqs-1.html" class="dropdown-link w-dropdown-link">Features 1</a>
+                <a href="../features/faqs---plattenlager-verlegung-plattenfix.html" class="dropdown-link w-dropdown-link">Features 1</a>
                 <a href="../features/standard-plattenlager.html" class="dropdown-link w-dropdown-link">Features 2</a>
                 <a href="../features/produkte-terrasse-balkon-flachdach-oder-im-garten.html" class="dropdown-link w-dropdown-link">Features 3</a>
               </nav>
@@ -300,14 +210,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 <a href="../Tools/bedarfsrechner.html" class="link">Bedarfsrechner</a><img src="../images/Arrow-Icon.svg" loading="lazy" alt="Arrow" class="dropdown-icon">
               </div>
               <nav class="dropdown-list w-dropdown-list">
-                <a href="../features/faqs-1.html" class="dropdown-link w-dropdown-link">Features 1</a>
+                <a href="../features/faqs---plattenlager-verlegung-plattenfix.html" class="dropdown-link w-dropdown-link">Features 1</a>
                 <a href="../features/standard-plattenlager.html" class="dropdown-link w-dropdown-link">Features 2</a>
                 <a href="../features/produkte-terrasse-balkon-flachdach-oder-im-garten.html" class="dropdown-link w-dropdown-link">Features 3</a>
               </nav>
             </div>
             <div data-hover="true" data-delay="200" data-w-id="f3299cc5-d2fc-28c1-c222-88a2d76e2150" class="dropdown-5 w-dropdown">
               <div class="dropdown w-dropdown-toggle">
-                <a href="../features/faqs-1.html" class="link">FAQs</a><img src="../images/Arrow-Icon.svg" loading="lazy" alt="Arrow" class="dropdown-icon">
+                <a href="../features/faqs---plattenlager-verlegung-plattenfix.html" class="link">FAQs</a><img src="../images/Arrow-Icon.svg" loading="lazy" alt="Arrow" class="dropdown-icon">
               </div>
               <nav class="dropdown-list w-dropdown-list">
                 <a href="../about/uber-uns---about.html" aria-current="page" class="dropdown-link w-dropdown-link w--current">About</a>
@@ -440,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="features-component">
           <div class="features-about-wrapper">
             <div data-w-id="a00ce63b-7f8e-8663-d4ed-e55490b083ae" style="opacity:0" class="features vertical-flex">
-              <a href="#" class="about-image w-inline-block"><img src="../images/Kaim-KT-9639.avif" loading="lazy" width="712" sizes="(max-width: 767px) 100vw, 712px" alt="" srcset="../images/Kaim-KT-9639-p-500.avif 500w, ../images/Kaim-KT-9639-p-800.avif 800w, ../images/Kaim-KT-9639.avif 1399w" class="image-25">
+              <a href="#" class="about-image w-inline-block"><img src="../images/Kaim-KT-9639.avif" loading="lazy" width="712" sizes="(max-width: 479px) 100vw, 712px" alt="" srcset="../images/Kaim-KT-9639-p-500.avif 500w, ../images/Kaim-KT-9639-p-800.avif 800w, ../images/Kaim-KT-9639.avif 1399w" class="image-25">
                 <div style="opacity:1;height:100%" class="mask-frame"></div>
               </a>
               <div class="features-about-content">
@@ -454,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
             <div data-w-id="a00ce63b-7f8e-8663-d4ed-e55490b083b8" style="opacity:0" class="features vertical-flex">
               <div class="align-wrapper-right">
-                <a href="#" class="about-image w-inline-block"><img src="../images/Kaim-KT-9717.jpg" loading="lazy" width="712" sizes="(max-width: 767px) 100vw, 712px" alt="" srcset="../images/Kaim-KT-9717-p-500.jpg 500w, ../images/Kaim-KT-9717-p-800.jpg 800w, ../images/Kaim-KT-9717-p-1080.jpg 1080w, ../images/Kaim-KT-9717.jpg 1547w" class="image-26">
+                <a href="#" class="about-image w-inline-block"><img src="../images/Kaim-KT-9717.jpg" loading="lazy" width="712" sizes="(max-width: 479px) 100vw, 712px" alt="" srcset="../images/Kaim-KT-9717-p-500.jpg 500w, ../images/Kaim-KT-9717-p-800.jpg 800w, ../images/Kaim-KT-9717-p-1080.jpg 1080w, ../images/Kaim-KT-9717.jpg 1547w" class="image-26">
                   <div style="opacity:1;height:100%" class="mask-frame"></div>
                 </a>
                 <div class="features-about-content">
@@ -468,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function() {
               </div>
             </div>
             <div data-w-id="a00ce63b-7f8e-8663-d4ed-e55490b083c3" style="opacity:0" class="features vertical-flex">
-              <a href="#" class="about-image w-inline-block"><img src="../images/Kaim-KT-9734-Plattenfix.avif" loading="lazy" width="712" sizes="(max-width: 767px) 100vw, 712px" alt="" srcset="../images/Kaim-KT-9734-Plattenfix-p-500.avif 500w, ../images/Kaim-KT-9734-Plattenfix-p-800.avif 800w, ../images/Kaim-KT-9734-Plattenfix-p-1080.avif 1080w, ../images/Kaim-KT-9734-Plattenfix.avif 1476w" class="image-27">
+              <a href="#" class="about-image w-inline-block"><img src="../images/Kaim-KT-9734-Plattenfix.avif" loading="lazy" width="712" sizes="(max-width: 479px) 100vw, 712px" alt="" srcset="../images/Kaim-KT-9734-Plattenfix-p-500.avif 500w, ../images/Kaim-KT-9734-Plattenfix-p-800.avif 800w, ../images/Kaim-KT-9734-Plattenfix-p-1080.avif 1080w, ../images/Kaim-KT-9734-Plattenfix.avif 1476w" class="image-27">
                 <div style="opacity:1;height:100%" class="mask-frame"></div>
               </a>
               <div class="features-about-content">
@@ -889,6 +799,78 @@ document.addEventListener("DOMContentLoaded", function() {
       loadGoogleAnalytics(); // Load now
     }
   }
+</script>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // --- THE GLOBAL SITE DATABASE ---
+  // This contains all your important pages. The search checks the 'title' and 'keywords'.
+  const sitePages =[
+    // PRODUCTS
+    { title: "STANDARD Plattenlager", url: "/features/standard-plattenlager.html", category: "Produkt", keywords: "basis günstig flachdach" },
+    { title: "MAXI-Plattenlager", url: "/features/maxi-plattenlager.html", category: "Produkt", keywords: "stapelbar hoch untergrund" },
+    { title: "MULTI / MULTI+PLUS", url: "/features/multi-multi-plus-plattenlager.html", category: "Produkt", keywords: "allrounder 24,5cm" },
+    { title: "VARIO / VARIO MINI Stelzlager", url: "/features/vario-vario-mini-stelzlager.html", category: "Produkt", keywords: "gefälle ausgleichen stufenlos" },
+    { title: "Fugenkreuze", url: "/features/fugenkreuze.html", category: "Produkt", keywords: "abstand drainage t-stück" },
+    { title: "Rasenfugenkreuze", url: "/features/rasenfugenkreuze.html", category: "Produkt", keywords: "ökologisch grüne fuge auffahrt" },
+    // RATGEBER (BLOGS)
+    { title: "Profi-Guide: Terrasse ohne Beton", url: "/ratgeber/stelzlager-plattenlager-fur-terrassen-der-din-konforme-profi-guide.html", category: "Ratgeber", keywords: "din anleitung mörtelsäckchen alternative" },
+    { title: "Wasserablauf verbessern & Staunässe vermeiden", url: "/ratgeber/wasserablauf-der-terrasse-verbessern.html", category: "Ratgeber", keywords: "drainage frostschutz" },
+    { title: "Holzterrassen & WPC Unterkonstruktion", url: "/ratgeber/wpc--und-holzterrassen-die-perfekte-unterkonstruktion-mit-balkenlagern.html", category: "Ratgeber", keywords: "balkenlager holz wpc" },
+    { title: "Ökologische Auffahrten pflastern", url: "/ratgeber/okologische-flachenbefestigung-auffahrten-pflastern-mit-rasenfugenkreuzen.html", category: "Ratgeber", keywords: "rasengitter befahrbar" },
+    { title: "Dachterrasse: Bitumen schützen", url: "/ratgeber/terrassenaufbau-auf-dem-flachdach-abdichtungen-und-bitumen-sicher-schutzen.html", category: "Ratgeber", keywords: "flachdach folie" },
+    // TOOLS & INFO
+    { title: "Bedarfsrechner", url: "/Tools/bedarfsrechner.html", category: "Tool", keywords: "berechnen menge rechner" },
+    { title: "Downloads & Datenblätter", url: "/Tools/downloads.html", category: "Tool", keywords: "pdf katalog" },
+    { title: "Über Uns", url: "/about/uber-uns---about.html", category: "Info", "keywords": "kaim gmbh team" },
+    { title: "Kontakt", url: "/contact/contact-3.html", category: "Info", keywords: "telefon email anfrage" }
+  ];
+  const searchInput = document.getElementById("global-nav-search");
+  const resultsBox = document.getElementById("global-search-results");
+  if (!searchInput || !resultsBox) return; // Stop if not found on page
+  searchInput.addEventListener("input", function() {
+    const query = this.value.toLowerCase().trim();
+    resultsBox.innerHTML = ""; 
+    if (query.length === 0) {
+      resultsBox.style.display = "none";
+      return;
+    }
+    const queryWords = query.split(" ");
+    // Filter the database
+    const matchedPages = sitePages.filter(function(page) {
+      const searchableText = (page.title + " " + page.category + " " + page.keywords).toLowerCase();
+      return queryWords.every(word => searchableText.includes(word));
+    });
+    // Build the Dropdown
+    if (matchedPages.length > 0) {
+      matchedPages.forEach(function(page) {
+        const link = document.createElement("a");
+        link.href = page.url;
+        link.className = "global-result-item";
+        link.innerHTML = `
+          <span class="global-result-title">${page.title}</span>
+          <span class="global-result-category">${page.category}</span>
+        `;
+        resultsBox.appendChild(link);
+      });
+      resultsBox.style.display = "block"; 
+    } else {
+      resultsBox.innerHTML = "<div style='padding: 15px; color: #888; font-size: 13px;'>Keine passenden Seiten gefunden.</div>";
+      resultsBox.style.display = "block";
+    }
+  });
+  // Hide dropdown when clicking outside
+  document.addEventListener("click", function(event) {
+    if (!searchInput.contains(event.target) && !resultsBox.contains(event.target)) {
+      resultsBox.style.display = "none";
+    }
+  });
+  // Show dropdown again if clicking back into input
+  searchInput.addEventListener("focus", function() {
+    if (this.value.trim().length > 0) {
+      this.dispatchEvent(new Event('input')); 
+    }
+  });
+});
 </script>
 </body>
 </html>
