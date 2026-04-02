@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Apr 02 2026 12:38:55 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Apr 02 2026 13:55:50 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6911b6e00e516d233d0b54ad" data-wf-site="6911b6de0e516d233d0b5428" lang="en">
 <head>
   <meta charset="utf-8">
@@ -22,6 +22,7 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
   <link href="https://www.plattenfix.de/old-home" rel="canonical">
   <meta name="google-site-verification" content="fQ4Z3q6aW9C6Qe-MH4syKjkTt0VoZJ1q5MBb-HYq4jQ">
+  <link rel="preload" fetchpriority="high" as="image" href="images/6911dbac62e7729ca968bd98_Kaim-KT-9673-copy.webp">
 </head>
 <body>
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
@@ -180,7 +181,7 @@
         Wir nutzen Cookies, um unsere Website zu verbessern.
         <br>
         <span style="font-size: 12px;">
-          <a href="datenschutz.html">Datenschutzerklärung</a> | <a href="impressum.html">Impressum</a>
+          <a href="datenschutzerklarung.html">Datenschutzerklärung</a> | <a href="impressum.html">Impressum</a>
         </span>
       </div>
       <div class="pf-cookie-buttons">
@@ -190,11 +191,9 @@
     </div>
   </div>
   <script>
-  // 1. YOUR GOOGLE ANALYTICS ID (I added it here for you)
   const ga_measurement_id = "G-99BZE76MKV"; 
-  // Helper: Function to Load Analytics dynamically
   function loadGoogleAnalytics() {
-    if (document.getElementById('ga-script')) return; // Prevent duplicates
+    if (document.getElementById('ga-script')) return;
     var script = document.createElement('script');
     script.id = 'ga-script';
     script.async = true;
@@ -204,96 +203,66 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', ga_measurement_id, { 'anonymize_ip': true });
-    console.log("Analytics Loaded: " + ga_measurement_id);
   }
-  // 2. COOKIE LOGIC
   document.addEventListener("DOMContentLoaded", function() {
     const savedConsent = localStorage.getItem("pf_cookie_consent");
     if (!savedConsent) {
       document.getElementById("pf-cookie-banner").style.display = "block";
     } else if (savedConsent === 'all') {
-      loadGoogleAnalytics(); // Load immediately if previously accepted
+      loadGoogleAnalytics();
     }
   });
   function acceptCookies(type) {
     localStorage.setItem("pf_cookie_consent", type);
     document.getElementById("pf-cookie-banner").style.display = "none";
-    if (type === 'all') {
-      loadGoogleAnalytics(); // Load now
-    }
+    if (type === 'all') { loadGoogleAnalytics(); }
   }
-</script>
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // --- THE GLOBAL SITE DATABASE ---
-  // This contains all your important pages. The search checks the 'title' and 'keywords'.
-  const sitePages =[
-    // PRODUCTS
-    { title: "STANDARD Plattenlager", url: "/features/standard-plattenlager.html", category: "Produkt", keywords: "basis günstig flachdach" },
-    { title: "MAXI-Plattenlager", url: "/features/maxi-plattenlager.html", category: "Produkt", keywords: "stapelbar hoch untergrund" },
-    { title: "MULTI / MULTI+PLUS", url: "/features/multi-multi-plus-plattenlager.html", category: "Produkt", keywords: "allrounder 24,5cm" },
-    { title: "VARIO / VARIO MINI Stelzlager", url: "/features/vario-vario-mini-stelzlager.html", category: "Produkt", keywords: "gefälle ausgleichen stufenlos" },
-    { title: "Fugenkreuze", url: "/features/fugenkreuze.html", category: "Produkt", keywords: "abstand drainage t-stück" },
-    { title: "Rasenfugenkreuze", url: "/features/rasenfugenkreuze.html", category: "Produkt", keywords: "ökologisch grüne fuge auffahrt" },
-    // RATGEBER (BLOGS)
-    { title: "Profi-Guide: Terrasse ohne Beton", url: "/ratgeber/stelzlager-plattenlager-fur-terrassen-der-din-konforme-profi-guide.html", category: "Ratgeber", keywords: "din anleitung mörtelsäckchen alternative" },
-    { title: "Wasserablauf verbessern & Staunässe vermeiden", url: "/ratgeber/wasserablauf-der-terrasse-verbessern.html", category: "Ratgeber", keywords: "drainage frostschutz" },
-    { title: "Holzterrassen & WPC Unterkonstruktion", url: "/ratgeber/wpc--und-holzterrassen-die-perfekte-unterkonstruktion-mit-balkenlagern.html", category: "Ratgeber", keywords: "balkenlager holz wpc" },
-    { title: "Ökologische Auffahrten pflastern", url: "/ratgeber/okologische-flachenbefestigung-auffahrten-pflastern-mit-rasenfugenkreuzen.html", category: "Ratgeber", keywords: "rasengitter befahrbar" },
-    { title: "Dachterrasse: Bitumen schützen", url: "/ratgeber/terrassenaufbau-auf-dem-flachdach-abdichtungen-und-bitumen-sicher-schutzen.html", category: "Ratgeber", keywords: "flachdach folie" },
-    // TOOLS & INFO
-    { title: "Bedarfsrechner", url: "/Tools/bedarfsrechner.html", category: "Tool", keywords: "berechnen menge rechner" },
-    { title: "Downloads & Datenblätter", url: "/Tools/downloads.html", category: "Tool", keywords: "pdf katalog" },
-    { title: "Über Uns", url: "/about/uber-uns---about.html", category: "Info", "keywords": "kaim gmbh team" },
-    { title: "Kontakt", url: "/contact/contact-3.html", category: "Info", keywords: "telefon email anfrage" }
+  // --- GLOBAL SITE SEARCH ENGINE ---
+  const sitePages = [
+    { title: "STANDARD Plattenlager", url: "https://www.plattenfix.de/features/standard-plattenlager.html", category: "Produkt", keywords: "basis günstig flachdach" },
+    { title: "MAXI-Plattenlager", url: "https://www.plattenfix.de/features/maxi-plattenlager.html", category: "Produkt", keywords: "stapelbar hoch untergrund" },
+    { title: "MULTI / MULTI+PLUS", url: "https://www.plattenfix.de/features/multi-multi-plus-plattenlager.html", category: "Produkt", keywords: "allrounder 24,5cm" },
+    { title: "VARIO / VARIO MINI Stelzlager", url: "https://www.plattenfix.de/features/vario-vario-mini-stelzlager.html", category: "Produkt", keywords: "gefälle ausgleichen stufenlos" },
+    { title: "Fugenkreuze", url: "https://www.plattenfix.de/features/fugenkreuze.html", category: "Produkt", keywords: "abstand drainage t-stück" },
+    { title: "Rasenfugenkreuze", url: "https://www.plattenfix.de/features/rasenfugenkreuze.html", category: "Produkt", keywords: "ökologisch grüne fuge auffahrt" },
+    { title: "Profi-Guide: Terrasse ohne Beton", url: "https://www.plattenfix.de/ratgeber/stelzlager-plattenlager-fur-terrassen-der-din-konforme-profi-guide.html", category: "Ratgeber", keywords: "din anleitung mörtelsäckchen alternative" },
+    { title: "Wasserablauf verbessern & Staunässe vermeiden", url: "https://www.plattenfix.de/ratgeber/wasserablauf-der-terrasse-verbessern.html", category: "Ratgeber", keywords: "drainage frostschutz" },
+    { title: "Holzterrassen & WPC Unterkonstruktion", url: "https://www.plattenfix.de/ratgeber/wpc--und-holzterrassen-die-perfekte-unterkonstruktion-mit-balkenlagern.html", category: "Ratgeber", keywords: "balkenlager holz wpc" },
+    { title: "Ökologische Auffahrten pflastern", url: "https://www.plattenfix.de/ratgeber/okologische-flachenbefestigung-auffahrten-pflastern-mit-rasenfugenkreuzen.html", category: "Ratgeber", keywords: "rasengitter befahrbar" },
+    { title: "Dachterrasse: Bitumen schützen", url: "https://www.plattenfix.de/ratgeber/terrassenaufbau-auf-dem-flachdach-abdichtungen-und-bitumen-sicher-schutzen.html", category: "Ratgeber", keywords: "flachdach folie" },
+    { title: "Bedarfsrechner", url: "https://www.plattenfix.de/Tools/bedarfsrechner.html", category: "Tool", keywords: "berechnen menge rechner" },
+    { title: "Kontakt", url: "https://www.plattenfix.de/contact/contact-3.html", category: "Info", keywords: "telefon email anfrage" }
   ];
   const searchInput = document.getElementById("global-nav-search");
   const resultsBox = document.getElementById("global-search-results");
-  if (!searchInput || !resultsBox) return; // Stop if not found on page
-  searchInput.addEventListener("input", function() {
-    const query = this.value.toLowerCase().trim();
-    resultsBox.innerHTML = ""; 
-    if (query.length === 0) {
-      resultsBox.style.display = "none";
-      return;
-    }
-    const queryWords = query.split(" ");
-    // Filter the database
-    const matchedPages = sitePages.filter(function(page) {
-      const searchableText = (page.title + " " + page.category + " " + page.keywords).toLowerCase();
-      return queryWords.every(word => searchableText.includes(word));
-    });
-    // Build the Dropdown
-    if (matchedPages.length > 0) {
-      matchedPages.forEach(function(page) {
-        const link = document.createElement("a");
-        link.href = page.url;
-        link.className = "global-result-item";
-        link.innerHTML = `
-          <span class="global-result-title">${page.title}</span>
-          <span class="global-result-category">${page.category}</span>
-        `;
-        resultsBox.appendChild(link);
+  if (searchInput && resultsBox) {
+    searchInput.addEventListener("input", function() {
+      const query = this.value.toLowerCase().trim();
+      resultsBox.innerHTML = ""; 
+      if (query.length === 0) { resultsBox.style.display = "none"; return; }
+      const queryWords = query.split(" ");
+      const matchedPages = sitePages.filter(page => {
+        const text = (page.title + " " + page.category + " " + page.keywords).toLowerCase();
+        return queryWords.every(word => text.includes(word));
       });
-      resultsBox.style.display = "block"; 
-    } else {
-      resultsBox.innerHTML = "<div style='padding: 15px; color: #888; font-size: 13px;'>Keine passenden Seiten gefunden.</div>";
-      resultsBox.style.display = "block";
-    }
-  });
-  // Hide dropdown when clicking outside
-  document.addEventListener("click", function(event) {
-    if (!searchInput.contains(event.target) && !resultsBox.contains(event.target)) {
-      resultsBox.style.display = "none";
-    }
-  });
-  // Show dropdown again if clicking back into input
-  searchInput.addEventListener("focus", function() {
-    if (this.value.trim().length > 0) {
-      this.dispatchEvent(new Event('input')); 
-    }
-  });
-});
+      if (matchedPages.length > 0) {
+        matchedPages.forEach(page => {
+          const link = document.createElement("a");
+          let finalUrl = page.url;
+          if (window.location.hostname.includes("webflow.io")) { finalUrl = finalUrl.replace(".html", ""); }
+          link.href = finalUrl;
+          link.className = "global-result-item";
+          link.innerHTML = `<span class="global-result-title">${page.title}</span><span class="global-result-category">${page.category}</span>`;
+          resultsBox.appendChild(link);
+        });
+        resultsBox.style.display = "block"; 
+      } else {
+        resultsBox.innerHTML = "<div style='padding: 15px; color: #888; font-size: 13px;'>Keine Seiten gefunden.</div>";
+        resultsBox.style.display = "block";
+      }
+    });
+    document.addEventListener("click", (e) => { if (!searchInput.contains(e.target) && !resultsBox.contains(e.target)) resultsBox.style.display = "none"; });
+  }
 </script>
 </body>
 </html>
