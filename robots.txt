@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /ratgeber/
+Allow: /features/
+
+Sitemap: https://www.plattenfix.de/sitemap.xml
