@@ -7373,7 +7373,9 @@ blockquote {
   .nav-menu {
     grid-row-gap: 5rem;
     background-color: #f0f4f8;
+    flex-flow: column;
     justify-content: center;
+    height: 100vh;
   }
 
   .dropdown-icon {
@@ -8405,6 +8407,10 @@ blockquote {
     margin-top: 28px;
   }
 
+  .dropdown-2, .dropdown-3, .dropdown-4, .dropdown-5, .dropdown-6 {
+    height: auto;
+  }
+
   .code-embed-2 {
     padding-left: 10px;
     padding-right: 10px;
@@ -8512,6 +8518,10 @@ blockquote {
 
   .dropdown-list {
     color: var(--dark-green);
+  }
+
+  .nav-menu {
+    min-height: auto;
   }
 
   .menu-icon.invert {
