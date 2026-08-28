@@ -110,8 +110,52 @@
   @media (max-width: 600px) {
     .pf-grid-2, .pf-grid-products { grid-template-columns: 1fr 1fr; }
   }
+  .pf-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+  }
+  .pf-faq-section {
+    max-width: 800px;
+    margin: 4rem auto 0;
+  }
+  .pf-faq-section h2 {
+    font-size: 1.6rem;
+    color: #222;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #0e96d4;
+    padding-bottom: 8px;
+  }
+  .faq-card {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .faq-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .faq-question {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0973a8;
+    margin-bottom: 10px;
+  }
+  .faq-answer {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+  }
 </style>
       <h1 class="text-weight-regular heading-3 pf-page-title">Bedarfsrechner für Stelzlager &amp; Platten</h1>
+      <p class="pf-intro">Wie viele Stelzlager, Fugenkreuze oder Platten Sie für Ihre Terrasse benötigen, hängt von der Fläche, dem gewählten Verlegemuster und der Fugenbreite ab. Mit unserem Bedarfsrechner ermitteln Sie den genauen Bedarf in wenigen Schritten – kostenlos und unverbindlich. So vermeiden Sie Fehlkäufe und wissen schon vor Projektstart genau, was Sie brauchen.</p>
       <div id="pf-calculator">
         <!--  STEP 1  -->
         <div class="pf-step">
@@ -200,6 +244,27 @@
           </div>
         </div>
       </div>
+
+      <div class="pf-faq-section">
+        <h2>Häufige Fragen zum Bedarfsrechner</h2>
+        <div class="faq-card">
+          <div class="faq-question">Wie viele Stelzlager brauche ich pro Quadratmeter?</div>
+          <div class="faq-answer">Das hängt von der Plattengröße und dem gewählten Verlegemuster ab. Bei einer Standardplatte von 60 &times; 60 cm im Kreuzverband benötigen Sie in der Regel 3–4 Stelzlager pro Quadratmeter. Der Bedarfsrechner oben berücksichtigt Ihre genauen Maße und liefert ein exaktes Ergebnis.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-question">Was ist der Unterschied zwischen Kreuzverband und Läuferverband?</div>
+          <div class="faq-answer">Beim Kreuzverband stoßen die Fugen der Platten exakt aufeinander – das ergibt ein gleichmäßiges Rasterbild und ist die gängigste Verlegeart. Beim Läuferverband werden die Platten versetzt verlegt, ähnlich wie bei einem Mauerwerksverband. Beide Muster funktionieren mit allen PLATTENFIX-Systemen.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-question">Welche Fugenbreite sollte ich wählen?</div>
+          <div class="faq-answer">Für die meisten Terrassenprojekte empfehlen wir 3–5 mm. Sie sorgt für sauberen Wasserablauf und genug Spielraum bei Materialausdehnung. Unsere Fugenkreuze halten diesen Abstand automatisch und gleichmäßig ein.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-question">Was mache ich bei unebenem Untergrund oder Gefälle?</div>
+          <div class="faq-answer">Für Höhenunterschiede empfehlen wir MAXI- oder MULTI-Plattenlager, die stufenlos bis zu 24,5 cm ausgleichen. Bei Gefälle sorgen unsere VARIO-Stelzlager mit Gewindetechnik für eine exakt waagerechte Fläche.</div>
+        </div>
+      </div>
+
       <script>
 document.addEventListener("DOMContentLoaded", function() {
   // --- IMAGES ---
